@@ -7,5 +7,9 @@ Rails.application.routes.draw do
   }
 
   resources :dashboard
+
+  resources :workspaces do
+    resources :tasks
+  end
 end
 
