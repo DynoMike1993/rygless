@@ -1,0 +1,15 @@
+.devise-container
+  .devise-container__header
+    %h2 Sign up
+  .devise-container__form
+    = simple_form_for resource, as: resource_name, url: registration_path(resource_name) do |f|
+      = devise_error_messages!
+      = f.input :email, autofocus: true, autocomplete: "email"
+      - if @minimum_password_length
+        %em
+          (#{@minimum_password_length} characters minimum)
+      = f.input :password, autocomplete: "new-password"
+      = f.input :password_confirmation, autocomplete: "new-password"
+      .actions
+        = f.submit "Sign up"
+    = link_to 'Sign in', new_user_session_path

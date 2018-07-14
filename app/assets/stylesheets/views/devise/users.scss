@@ -1,0 +1,11 @@
+.devise-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+
+  &__header {
+    margin-bottom: 1em;
+    text-align: center;
+  }
+}

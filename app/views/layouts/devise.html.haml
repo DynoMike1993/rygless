@@ -9,6 +9,6 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     .content
-      = render partial: 'layouts/application/top_navbar'
-      .wrapper
-        = yield
+      .row
+        .col-lg-4.offset-lg-4.col-sm-6.offset-sm-3
+          = yield

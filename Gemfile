@@ -27,6 +27,7 @@ gem 'draper'
 gem 'factory_bot'
 gem 'pundit'
 gem 'devise'
+gem 'simple_form'
 
 gem 'jquery-rails'
 
