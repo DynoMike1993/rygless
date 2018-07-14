@@ -1,0 +1,62 @@
+AllCops:
+  TargetRubyVersion: 2.3
+  Exclude:
+    - 'bin/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'Guardfile'
+    - 'Rakefile'
+    - 'spec/**/*'
+Documentation:
+  Enabled: false
+Metrics/ClassLength:
+  Max: 150
+Metrics/LineLength:
+  Enabled: true
+  Max: 120
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context']
+Rails/ActionFilter:
+  Enabled: false
+SignalException:
+  Enabled: false
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+  Enabled: true
+Layout/TrailingBlankLines:
+  EnforcedStyle: final_blank_line
+Layout/DotPosition:
+  EnforcedStyle: leading
+  Enabled: true
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Metrics/ClassLength:
+  Enabled: false
+Naming/PredicateName:
+  Enabled: false
+Metrics/BlockNesting:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Enabled: false
+Metrics/ModuleLength:
+  Enabled: false
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%i': '()'
+    '%I': '()'
+    '%r': '{}'
+    '%w': '()'
+    '%W': '()'
+
+
