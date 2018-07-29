@@ -7,7 +7,10 @@
     .col-3
       .workspace-header__name
         Name
-    .col-9
+    .col-3
+      .workspace-header__user-email
+        User email
+    .col-6
       .workspace-header_links
         Actions
 .workspaces-container
@@ -17,7 +20,10 @@
         .col-3
           .workspace__name
             = workspace.name
-        .col-9
+        .col-3
+          .workspace__user-email
+            = workspace.user_name
+        .col-6
           .workspace__links
             = link_to 'Tasks', workspace_tasks_path(workspace)
             = link_to 'Edit', edit_workspace_path(workspace)

@@ -1,6 +1,6 @@
 class WorkspacesController < ApplicationController
   expose :workspace
-  expose :workspaces, -> { Workspace.all }
+  expose :workspaces, -> { Workspace.all.decorate }
   def index; end
 
   def new; end
