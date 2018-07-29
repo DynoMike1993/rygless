@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Rygless
   class Application < Rails::Application
+    config.autoload_paths << Rails.root.join('app', 'policy')
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
