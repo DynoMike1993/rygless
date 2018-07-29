@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2018_07_14_222351) do
   create_table "tasks", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.integer "status"
     t.bigint "user_id"
     t.bigint "workspace_id"
     t.datetime "created_at", null: false

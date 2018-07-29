@@ -30,3 +30,13 @@
     padding: 1em;
   }
 }
+
+a {
+  color: #000;
+}
+
+a:hover, a:visited {
+  text-decoration: none;
+  background-color: transparent;
+  color: #000;
+}

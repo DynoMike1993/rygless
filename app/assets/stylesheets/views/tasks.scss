@@ -1,0 +1,10 @@
+.new-task {
+  &__link {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.tasks-header {
+  border-bottom: 1px solid #808080;
+}

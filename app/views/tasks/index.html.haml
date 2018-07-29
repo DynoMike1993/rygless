@@ -1,0 +1,19 @@
+.new-task__link
+  = link_to new_workspace_task_path(workspace) do
+    %button.btn.btn-primary.btn-sm
+      + New task
+.tasks-header
+  .row
+    .col-3
+      .task-header__name
+        Name
+    .col-3
+      .task-header__status
+        Status
+    .col-6
+      .task-header__actions
+        Actions
+.tasks-container
+  - tasks.each do |task|
+    .task
+      = task.name

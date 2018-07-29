@@ -1,3 +1,22 @@
-- workspaces.each do |workspace|
-  = workspace.name
-= link_to 'new workspace', new_workspace_path
+.new-workspace__link
+  = link_to new_workspace_path do
+    %button.btn.btn-primary.btn-sm
+      + New workspace
+.workspaces-header
+  .row
+    .col-3
+      .workspace-header__name
+        Name
+    .col-9
+      .workspace-header_links
+        Actions
+.workspaces-container
+  - workspaces.each do |workspace|
+    .workspace
+      .row
+        .col-3
+          .workspace__name
+            = workspace.name
+        .col-9
+          .workspace__links
+            = link_to 'Tasks', workspace_tasks_path(workspace)
