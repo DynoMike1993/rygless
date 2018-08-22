@@ -1,26 +1,24 @@
 require 'rails_helper'
 
 describe WorkspacePolicy do
-  subject { described_class.new(params).able_to_edit? }
+  subject { described_class }
+  let(:workspace) { build(:workspace) }
+  let(:user) { build(:user) }
 
-  context 'denies access if workspace doesnt belongs to user' do
-    let(:params) { { user: build(:user), record: build(:workspace) } }
+  permissions :edit? do
+    it 'denies access if workspace doesnt belongs to user' do
+      expect(subject).not_to permit(user, workspace)
+    end
 
-    it { is_expected.to be false }
-  end
+    it 'grants access if workspace bleongs to user' do
+      user.workspaces << workspace
+      expect(subject).to permit(user, workspace)
+    end
 
-  context 'grants access if workspace bleongs to user' do
-    let(:workspace) { build(:workspace) }
-    let(:params) { { user: build(:user, workspaces: [workspace]), record: workspace } }
-
-    it { is_expected.to be true }
-  end
-
-  context 'grants acces if user is admin' do
-    let(:workspace) { build(:workspace) }
-    let(:params) { { user: build(:user, :admin, workspaces: [workspace]), record: workspace } }
-
-    it { is_expected.to be true }
+    it 'grants acces if user is admin' do
+      user.admin = true
+      expect(subject).to permit(user, workspace)
+    end
   end
 end
 

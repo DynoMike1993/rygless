@@ -2,6 +2,8 @@
   = link_to new_workspace_path do
     %button.btn.btn-primary.btn-sm
       + New workspace
+- if flash[:alert].present?
+  = flash[:alert]
 .workspaces-header
   .row
     .col-3
@@ -26,4 +28,5 @@
         .col-6
           .workspace__links
             = link_to 'Tasks', workspace_tasks_path(workspace)
-            = link_to 'Edit', edit_workspace_path(workspace)
+            - if policy(workspace).edit?
+              = link_to 'Edit', edit_workspace_path(workspace)

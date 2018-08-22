@@ -14,7 +14,7 @@ class WorkspacesController < ApplicationController
   end
 
   def edit
-    if workspace_policy.able_to_edit?
+    if policy(workspace).edit?
       render :edit
     else
       render text: 'Not authorized', status: 403
@@ -22,6 +22,7 @@ class WorkspacesController < ApplicationController
   end
 
   def update
+    authorize workspace
     if workspace.update(workspace_params)
       redirect_to workspaces_path
     else
@@ -35,9 +36,14 @@ class WorkspacesController < ApplicationController
     params.require(:workspace).permit(:name).merge(user_id: current_user.id)
   end
 
-  def workspace_policy
-    @workspace_policy ||= WorkspacePolicy.new(user: current_user, record: workspace)
+  def user_not_authorized
+    flash[:alert] = 'You are not authorized to update it if created at is not today'
+    redirect_to workspaces_path
   end
-  helper_method :workspace_policy
+
+  # def workspace_policy
+  #   @workspace_policy ||= WorkspacePolicy.new(user: current_user, record: workspace)
+  # end
+  # helper_method :workspace_policy
 end
 

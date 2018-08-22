@@ -7,9 +7,14 @@ Rails.application.routes.draw do
   }
 
   resources :dashboard
-
   resources :workspaces do
     resources :tasks
   end
+  resources :users do
+    member do
+      get :leveling
+      post :fight_monster
+      post :example_workspaces
+    end
+  end
 end
-

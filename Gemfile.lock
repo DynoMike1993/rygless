@@ -100,6 +100,13 @@ GEM
       activemodel-serializers-xml (~> 1.0)
       activesupport (~> 5.0)
       request_store (~> 1.0)
+    dry-core (0.4.7)
+      concurrent-ruby (~> 1.0)
+    dry-equalizer (0.2.1)
+    dry-monads (1.0.1)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 0.4, >= 0.4.4)
+      dry-equalizer
     erubi (1.7.1)
     execjs (2.7.0)
     factory_bot (4.10.0)
@@ -275,6 +282,7 @@ DEPENDENCIES
   decent_exposure (= 3.0.0)
   devise
   draper
+  dry-monads
   factory_bot_rails (~> 4.0)
   haml
   jbuilder (~> 2.5)

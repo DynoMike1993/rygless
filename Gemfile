@@ -28,6 +28,7 @@ gem 'factory_bot_rails', '~> 4.0'
 gem 'pundit'
 gem 'devise'
 gem 'simple_form'
+gem 'dry-monads'
 
 gem 'jquery-rails'
 
