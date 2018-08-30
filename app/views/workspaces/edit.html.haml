@@ -1,4 +1,4 @@
-- if workspace_policy.able_to_edit?
+- if policy(workspace).edit?
   = simple_form_for workspace do |f|
     = f.input :name
     = f.submit

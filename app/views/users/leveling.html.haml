@@ -1,0 +1,5 @@
+- @monsters.each do |monster|
+  .div
+    Monster #{monster.name}, level #{monster.level}
+  = link_to 'Fight', fight_monster_user_path(current_user, monster_id: monster.id), method: :post
+  %hr
