@@ -8,8 +8,7 @@ class MessagesController < ApplicationController
   end
   
   def create
-    @message = MessageForm.new(Message.new(message_params)).submit
-    SendTwilioSmsService.new(@message).call if @message
+    MessageForm.new(Message.new(message_params)).submit
     redirect_to messages_path
   end
 

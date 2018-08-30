@@ -12,20 +12,18 @@ class SendTwilioSmsService
   private
 
   def twilio_client
-    
+    account_sid = 'AC1aafe6a5f06223114092c33f386a5815'
+    auth_token = 'f57398263ee610b2dea1a1e667c6a0d1'
+    Twilio::REST::Client.new(account_sid, auth_token)
   end
 
   def send_sms
-    @client = Twilio::REST::Client.new(
-      Rails.application.credentials.twilio_sid,
-      Rails.application.credentials.twilio_token
-    )
-    # client = twilio_client
-    p @client.api.account.messages.create(
-      from: '+15005550006',
-      to: '+48725577014',
-      body: 'Hey there!',
-      status_callback: 'https://149be62c.ngrok.io'
+    from = '+15005550006'
+    to = '+48725577014'
+    twilio_client.messages.create(
+      from: from,
+      to: to,
+      body: message.content
     )
   end
 
