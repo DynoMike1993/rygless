@@ -29,6 +29,9 @@ gem 'pundit'
 gem 'devise'
 gem 'simple_form'
 gem 'dry-monads'
+gem 'reform'
+gem 'reform-rails'
+gem 'twilio-ruby', '~> 5.12.3'
 
 gem 'jquery-rails'
 

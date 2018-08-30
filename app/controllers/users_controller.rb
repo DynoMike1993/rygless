@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def example_workspaces
-    msg = NewUserWorkspacesService.new(current_user).call
+    msg = NewUserWorkspacesService.call(current_user)
     redirect_to root_path, flash: { alert: msg }
   end
 end

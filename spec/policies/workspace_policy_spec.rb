@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'shared/shared_examples_stuff.rb'
 
 describe WorkspacePolicy do
   subject { described_class }
@@ -10,14 +11,18 @@ describe WorkspacePolicy do
       expect(subject).not_to permit(user, workspace)
     end
 
-    it 'grants access if workspace bleongs to user' do
-      user.workspaces << workspace
-      expect(subject).to permit(user, workspace)
+    context 'workspace bleongs to user' do
+      before do
+        user.workspaces << workspace
+      end
+      include_examples 'permit user'
     end
 
-    it 'grants acces if user is admin' do
-      user.admin = true
-      expect(subject).to permit(user, workspace)
+    context 'user is admin' do
+      before do
+        user.admin = true
+      end
+      include_examples 'permit user'
     end
   end
 end

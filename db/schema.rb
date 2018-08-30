@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_22_071404) do
+ActiveRecord::Schema.define(version: 2018_08_24_083354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "messages", force: :cascade do |t|
+    t.string "sender"
+    t.string "phone_number"
+    t.string "content"
+    t.datetime "created_at"
+  end
 
   create_table "monsters", force: :cascade do |t|
     t.string "name"

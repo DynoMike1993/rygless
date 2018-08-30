@@ -17,4 +17,5 @@ Rails.application.routes.draw do
       post :example_workspaces
     end
   end
+  resources :messages
 end
