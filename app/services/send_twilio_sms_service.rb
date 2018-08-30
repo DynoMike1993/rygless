@@ -12,8 +12,8 @@ class SendTwilioSmsService
   private
 
   def twilio_client
-    account_sid = 'AC1aafe6a5f06223114092c33f386a5815'
-    auth_token = 'f57398263ee610b2dea1a1e667c6a0d1'
+    account_sid = Rails.application.credentials.twilio_sid
+    auth_token = Rails.application.credentials.twilio_token
     Twilio::REST::Client.new(account_sid, auth_token)
   end
 
