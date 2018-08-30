@@ -4,6 +4,7 @@
       Rygless
     User level #{current_user.level}, Hp: #{current_user.hp}
   .top-navbar__links
+    = link_to 'User activity', user_path(current_user)
     = link_to 'Messages', messages_path
     = link_to 'Example workspaces', example_workspaces_user_path(current_user), method: :post
     = link_to 'Leveling', leveling_user_path(current_user)

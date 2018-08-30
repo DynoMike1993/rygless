@@ -1,4 +1,11 @@
 class UsersController < ApplicationController
+  def show
+    @activity = UserActivityQuery.new(current_user).call
+    @today_workspace = TodayUserWorkspacesQuery.new(current_user).call
+    @join_query = JoinQuery.call
+    @group_by_user = GroupByUserQuery.call
+  end
+
   def leveling
     @monsters = Monster.all.order(:level)
   end

@@ -43,7 +43,7 @@ class NewUserWorkspacesService
 
   def create_tasks(workspace)
     3.times do |i|
-      workspace.tasks.create(name: "taskexample#{i}")
+      workspace.tasks.create(name: "taskexample#{i}", user_id: workspace.user_id)
     end
     if workspace.tasks.length == 3
       Success('Success')

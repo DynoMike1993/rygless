@@ -1,0 +1,36 @@
+%h3
+  Today worskpaces
+- if @today_workspace.any?
+  - @today_workspace.each do |workspace|
+    .div
+    = workspace
+- else
+  .div
+    No today worskpaces
+%h3
+  User activity + First user activity
+- if @activity.any?
+  - @activity.each do |activ|
+    .div
+      = activ.inspect
+- else
+  .div
+    No activity
+%h3
+  Join query
+- if @join_query.any?
+  - @join_query.each do |query|
+    .div
+      = query.inspect
+- else
+  .div
+    No join queires
+%h3
+  Workspace group by user id
+- if @group_by_user
+  - @group_by_user.each do |g_b_u|
+    .div
+      = g_b_u.inspect
+- else
+  .div
+    No records

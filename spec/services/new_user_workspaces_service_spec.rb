@@ -1,7 +1,6 @@
 require 'rails_helper'
 require 'shared/shared_context_stuff.rb'
 require 'dry/monads/result'
-# include Dry::Monads::Result::Mixin
 
 describe NewUserWorkspacesService do
   describe '#call' do
